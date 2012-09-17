@@ -26,5 +26,5 @@ Refer to Gemfile
 
 WebcampKK Team :)
 
-Ahmad Hafeezi bin Ali Amat
+Ahmad Hafeezi bin Ali Amat [ Insan Solutions ]
 TS Lim
