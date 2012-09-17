@@ -27,4 +27,4 @@ Refer to Gemfile
 WebcampKK Team :)
 
 Ahmad Hafeezi bin Ali Amat
-TS Lim Tzyy Shyong
+TS Lim
