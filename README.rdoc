@@ -4,9 +4,9 @@ Event listing site for Kota Kinabalu, Sabah, Malaysia
 
 == Requirements
 
-Ruby 1.9.3
-Rails 3.2.8
-MySQL 5.5
+  Ruby 1.9.3
+  Rails 3.2.8
+  MySQL 5.5
 
 == Getting Started
 
