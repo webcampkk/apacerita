@@ -6,7 +6,6 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.297) 0px 0px 6px 0px;
   padding: 10px 10px 10px 20px;
-  width: 900px;
   margin-bottom: 20px;
   min-height: 240px;
 
@@ -25,7 +24,7 @@
     right: 0;
     top: 220px;
     padding: 5px 20px 5px 20px;
-    background-color: #4CA2BF;
+    background-color: $blue;
     box-shadow: rgba(0, 0, 0, 0.297) -2px 2px 5px 0px;
     text-shadow: #000 -1px -1px 0;
     color: white;
