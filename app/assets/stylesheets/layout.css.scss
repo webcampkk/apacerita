@@ -46,8 +46,13 @@ body {
 header {
   margin: 10px 0 20px 0;
   h1 {
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline;
+    background-color: #1C5C78;
     margin-bottom: 5px;
-    color: #1C5C78;
+    line-height: 70px;
+    color: white;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
   }
@@ -64,7 +69,7 @@ header {
   }
 
   .pull-right {
-    margin: 24px 10px 0 0;
+    margin: 34px 10px 0 0;
 
   }
 }
@@ -85,4 +90,12 @@ footer {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$green_land, endColorstr=$dark_green_land)" no-repeat;
 
   width: 100%;
+
+  .footer-message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: $dark_grey;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+  }
 }
