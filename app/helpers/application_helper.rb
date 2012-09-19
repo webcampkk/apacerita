@@ -3,11 +3,11 @@ module ApplicationHelper
   def event_date_range(event)
     date_range = ""
     if event.start_date == event.end_date or event.end_date.blank?
-      date_range = "#{event.start_date.strftime("%d %B %Y")}"
+      date_range = "#{event.start_date.strftime("%e %B %Y")}"
     elsif event.start_date.month == event.end_date.month && event.start_date.year == event.end_date.year
-      date_range = "#{event.start_date.strftime("%d")} - #{event.end_date.strftime("%d %b %Y")}"
+      date_range = "#{event.start_date.strftime("%e")} - #{event.end_date.strftime("%e %b %Y")}"
     else
-      date_range = "#{event.start_date.strftime("%d %b")} - #{event.end_date.strftime("%d %b %Y")}"
+      date_range = "#{event.start_date.strftime("%e %b")} - #{event.end_date.strftime("%e %b %Y")}"
     end  
   end
 

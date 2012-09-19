@@ -7,7 +7,7 @@ ActiveAdmin.register Event do
     end
     column :name
     column "Date/Time" do |event|
-      event.date_and_time
+      "#{event.start_date.strftime("%e %b")} - #{event.time}"
     end
     column :venue
     default_actions

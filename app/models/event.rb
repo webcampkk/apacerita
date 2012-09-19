@@ -13,18 +13,16 @@ class Event < ActiveRecord::Base
 
   before_save :qualify_website_address, :set_date_for_time
 
-  def date_and_time
-    str = "#{start_date.strftime("%d %b %Y")}"
-    str += " - #{end_date.strftime("%d %b %Y")}" unless end_date.blank?
-    str += " #{start_time.strftime("%I:%M %p")}" unless start_time.blank?
-    str += " #{end_time.strftime("%I:%M %p")}" unless end_time.blank?
-    str
-  end
-
   def time
     time_str = ""
-    time_str += "#{start_time.strftime("%I:%M %p")}" unless start_time.blank?
-    time_str += " - #{end_time.strftime("%I:%M %p")}" unless end_time.blank?
+    unless start_time.blank?
+      time_str += "#{start_date.strftime("%e %b")} - " if start_date != end_date and !end_date.blank?
+      time_str += "#{start_time.strftime("%I:%M %p")}" 
+    end
+    unless end_time.blank?
+      time_str += " #{end_date.strftime("%e %b")} -" if start_date != end_date and !end_date.blank?
+      time_str += " \u2014 #{end_time.strftime("%I:%M %p")}" 
+    end
   end
 
   def location
