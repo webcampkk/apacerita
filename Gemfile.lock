@@ -173,6 +173,7 @@ DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
   jquery-rails
+  kaminari
   mysql2
   pg
   rails (= 3.2.8)

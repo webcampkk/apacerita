@@ -10,6 +10,7 @@ gem 'pg'
 gem 'mysql2'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'activeadmin'
+gem 'kaminari'
 
 # Gems used only for assets and not required
 # in production environments by default.
