@@ -11,4 +11,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :category
 
+  def date_and_time
+    
+  end
+
 end
