@@ -1,0 +1,85 @@
+<% content_for(:title, "ApaCerita - Events around Kota Kinabalu") %>
+
+<div class="span12">
+
+  <section class="event clearfix">
+    <span class="event-category">Exhibition</span>
+    
+    <div class="event-map-image-container">
+      <%= link_to image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Kota Kinabalu, Sabah&zoom=14&size=250x200&scale=1&sensor=false&zoom=20"), "#" %>
+    </div>
+
+
+
+    <h2 class="overflow-hidden">Property Fair 2012</h2>
+    <div class="event-date-venue">
+      <span class="date"><i class="icon-calendar"></i>22 - 24 September 2012</span>
+      <h4 class="venue"><i class="icon-map-marker"></i><%= link_to "Sabah Trade Center, Likas", "#" %></h4>
+    </div>
+
+    <p class="desc">The premier property fair in Sabah with developers from all over the nation. Don't miss out on this annual event! Come early and 
+      stand a chance to win some awesome prizes!</p>
+
+    <div class="event-contact-info clearfix">
+      <div class="event-info-item clearfix">
+        <label>Organizer: </label>
+        <span>Propex</span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Contact: </label>
+        <span>Ah Beng</span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Phone: </label>
+        <span>012-2222222</span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Fax: </label>
+        <span>088-333333</span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Website: </label>
+        <span><%= link_to "http://propex.com.my", "http://propex.com.my" %></span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Email: </label>
+        <span><%= mail_to "ahbeng@apacerita.my" %></span>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="event clearfix">
+    <span class="event-category">Meetup</span>
+
+    <div class="event-map-image-container">
+      <%= link_to image_tag("http://maps.googleapis.com/maps/api/staticmap?center=Kota Kinabalu, Sabah&zoom=14&size=250x200&scale=1&sensor=false&zoom=20"), "#" %>
+    </div>
+
+
+    <h2 class="overflow-hidden">Webcamp KK - October Edition</h2>
+    <div class="event-date-venue">
+      <span class="date"><i class="icon-calendar"></i>9 October 2012</span>
+      <h4 class="venue"><i class="icon-map-marker"></i><%= link_to "Wisma Bandaraya 13th Floor", "#" %></h4>
+    </div>
+
+    <p class="desc">Webcamp KK is a monthly gathering of awesome people who work on the web. Developers, designers, bloggers, photographers, videographers and techpreneurs welcomed. Anyone who want to learn more about the web shouldn't miss this. All you need to do is just show up and listen.</p>
+
+    <div class="event-contact-info clearfix">
+      <div class="event-info-item clearfix">
+        <label>Organizer: </label>
+        <span>TS Lim</span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Website: </label>
+        <span><%= link_to "http://facebook.com/groups/webcampkk", "http://facebook.com/groups/webcampkk" %></span>
+      </div>
+      <div class="event-info-item clearfix">
+        <label>Email: </label>
+        <span><%= mail_to "tslim@flexnode.com" %></span>
+      </div>
+    </div>
+
+  </section>
+
+</div>

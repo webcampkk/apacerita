@@ -1,0 +1,103 @@
+@import "colors";
+
+.event {
+  position: relative;
+  background-color: $white_background;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.297) 0px 0px 6px 0px;
+  padding: 10px 10px 10px 20px;
+  width: 900px;
+  margin-bottom: 20px;
+  min-height: 240px;
+
+  .event-map-image-container {
+    float: right;
+    margin-left: 20px;
+
+    img {
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.297) 0px 0px 6px 0px;
+    }
+  }
+
+  .event-category {
+    position: absolute;
+    right: 0;
+    top: 220px;
+    padding: 5px 20px 5px 20px;
+    background-color: #4CA2BF;
+    box-shadow: rgba(0, 0, 0, 0.297) -2px 2px 5px 0px;
+    text-shadow: #000 -1px -1px 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+  }
+
+  h2 {
+    margin: 0 0 20px 0;
+  }
+
+  .event-date-venue {
+    height: 50px;
+
+    h4.venue {
+      display: inline;
+      padding: 5px 0;
+      i {
+        margin: 0 10px 0 15px;
+      }
+      a {
+        color: $default_text_color;
+        border-bottom: 1px dotted $light_grey;
+      }
+      a:hover {
+        text-decoration: none;
+        border-bottom: 1px dotted $dark_grey;
+      }
+    }
+
+    .date {
+      padding: 5px 20px 5px 20px;
+      background-color: $red_background;
+      box-shadow: rgba(0, 0, 0, 0.297) 2px 2px 5px 0px;
+      text-shadow: #000 -1px -1px 0;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: -20px;
+
+      i {
+        margin: 0 10px 0 2px;
+      }
+    }
+  }
+
+  p.desc {
+    text-align:justify;
+    text-justify:inter-word;
+  }
+
+  .event-contact-info {
+    margin: 20px 0 10px 0;
+
+    .event-info-item {
+      font-size: 12px;
+      color: $dark_grey;
+      height: 25px;
+      label {
+        font-size: 12px;
+        float: left;
+        width: 80px;
+      }
+      a {
+        text-decoration: none;
+        border-bottom: 1px dotted $default_link_color;
+      }
+      a:hover {
+        text-decoration: none;
+        border-bottom: 1px dotted $default_link_hover_color;
+      }
+    }
+  }
+}

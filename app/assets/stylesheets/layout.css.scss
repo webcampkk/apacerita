@@ -1,0 +1,88 @@
+@import "colors";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.overflow-hidden {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+body {
+  color: $default_text_color;
+  background-color: $light_blue_sky;
+  /* For WebKit (Safari, Chrome, etc) */
+  background: $light_blue_sky -webkit-gradient(linear, left top, left bottom, from($blue_sky), to($light_blue_sky)) no-repeat;
+  /* Mozilla,Firefox/Gecko */
+  background: $light_blue_sky -moz-linear-gradient(top, $blue_sky, $light_blue_sky) no-repeat;
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue_sky, endColorstr=$light_blue_sky) no-repeat;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue_sky, endColorstr=$light_blue_sky)" no-repeat;
+
+  padding-top: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.page {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -200px;
+}
+
+header {
+  margin: 10px 0 20px 0;
+  h1 {
+    margin-bottom: 5px;
+    color: #1C5C78;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+  }
+
+  p {
+    font-size: 16px;
+    background-color: #333;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+
+  }
+
+  .pull-right {
+    margin: 24px 10px 0 0;
+
+  }
+}
+
+footer, .push {
+  height: 200px;
+}
+
+footer {
+  background-color: $green_land;
+  /* For WebKit (Safari, Chrome, etc) */
+  background: $green_land -webkit-gradient(linear, left top, left bottom, from($green_land), to($dark_green_land)) no-repeat;
+  /* Mozilla,Firefox/Gecko */
+  background: $green_land -moz-linear-gradient(top, $green_land, $dark_green_land) no-repeat;
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$green_land, endColorstr=$dark_green_land) no-repeat;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$green_land, endColorstr=$dark_green_land)" no-repeat;
+
+  width: 100%;
+}
