@@ -1,0 +1,67 @@
+<section class="event clearfix">
+  <span class="event-category"><%= event.category.name %></span>
+  
+  <div class="event-map-image-container">
+    <%= link_to static_google_map_image(location: event.location), "#" %>
+  </div>
+
+  <h2 class="overflow-hidden"><%= event.name %></h2>
+  <div class="event-date-venue">
+    <span class="date"><i class="icon-calendar"></i><%= event_date_range(event) %></span>
+    <h4 class="venue"><i class="icon-map-marker"></i><%= link_to truncate(event.venue, :length => 35), "#" %></h4>
+  </div>
+
+  <%= simple_format event.description %>
+
+  <div class="event-contact-info clearfix">
+    <% unless event.time.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Time: </label>
+        <span><%= event.time %></span>
+      </div>
+    <% end -%>
+
+    <% unless event.organizer.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Organizer: </label>
+        <span><%= event.organizer %></span>
+      </div>
+    <% end -%>
+    
+    <% unless event.contact_person.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Contact: </label>
+        <span><%= event.contact_person %></span>
+      </div>
+    <% end -%>
+
+    <% unless event.phone_number.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Phone: </label>
+        <span><%= event.phone_number %></span>
+      </div>
+    <% end -%>
+    
+    <% unless event.fax_number.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Fax: </label>
+        <span><%= event.fax_number %></span>
+      </div>
+    <% end -%>
+    
+    <% unless event.website.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Website: </label>
+        <span><%= link_to event.website, event.website %></span>
+      </div>
+    <% end -%>
+
+    <% unless event.email.blank? %>
+      <div class="event-info-item clearfix">
+        <label>Email: </label>
+        <span><%= mail_to event.email %></span>
+      </div>
+    <% end -%>
+  </div>
+
+</section>
