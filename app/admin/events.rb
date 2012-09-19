@@ -15,6 +15,7 @@ ActiveAdmin.register Event do
 
   form do |f|
     f.inputs "Basic Information" do
+      f.input :category
       f.input :name
       f.input :venue, :hint => "A short description for location of event. "
       f.input :start_date
