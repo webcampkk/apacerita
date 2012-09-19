@@ -1,7 +1,10 @@
 <% content_for(:title, "ApaCerita - Events around Kota Kinabalu") %>
 
 <div class="span12">
-
- <%= render @events %>
-
+  <%= render @events %>
+  <div class="pagination">
+    <%= link_to_next_page @events, 'Next Page' %>
+    <%= link_to_previous_page @events, 'Previous Page' %>
+    <%= page_entries_info @events %>
+  </div>
 </div>

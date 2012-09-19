@@ -13,6 +13,9 @@ class Event < ActiveRecord::Base
 
   before_save :qualify_website_address, :set_date_for_time
 
+  scope :upcoming, where(["start_date >= ?", Date.today])
+  scope :soon, order("start_date ASC")
+
   def time
     time_str = ""
     unless start_time.blank?
