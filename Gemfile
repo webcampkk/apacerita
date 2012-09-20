@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'thin'
 gem 'pg'
 
 # Bundle edge Rails instead:
@@ -32,11 +31,22 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Use thin as the dev server
+group :development do
+  gem 'thin'
+end
+
+# Use unicorn as the app server 
+group :staging, :production do
+  gem 'unicorn'
+end
 
 # Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano_colors'
+end
 
 # To use debugger
 # gem 'debugger'
