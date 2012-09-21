@@ -1,10 +1,22 @@
 <% content_for(:title, "Events around Kota Kinabalu - ApaCerita") %>
 
 <div class="span12">
-  <%= render @events %>
-  <div class="pagination">
-    <%= link_to_next_page @events, 'Next Page' %>
-    <%= link_to_previous_page @events, 'Previous Page' %>
-    <%= page_entries_info @events %>
-  </div>
+  <% if !@events.blank? %>
+    <%= render @events %>
+    <div class="pagination">
+      <%= link_to_next_page @events, 'Next Page' %>
+      <%= link_to_previous_page @events, 'Previous Page' %>
+      <%= page_entries_info @events %>
+    </div>
+  <% elsif @events.blank? and params[:q] %>
+    <div class="blank-state">
+      <h2>Ooops... Can't find any events</h2>
+      <p>Try a different keyword or date</p>
+    </div>
+  <% else %>
+    <div class="blank-state">
+      <h2>Hmmm... Odd... No Events...</h2>
+      <p>If you know about an upcoming event, let us know!</p>
+    </div>
+  <% end -%>
 </div>
