@@ -10,6 +10,7 @@
  *
  *= require bootstrap_and_overrides
  *= require gmaps4rails
+ *= require date_picker
  *= require layout
  *= require events
  */

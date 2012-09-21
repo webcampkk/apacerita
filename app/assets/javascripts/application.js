@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require glDatePicker.min
+//= require datePicker
 //= require_tree .

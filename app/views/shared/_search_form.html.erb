@@ -1,0 +1,10 @@
+<%= form_tag search_events_path, :class => "form-search", :method => :get do %>
+  <%= text_field_tag("q", params[:q], :class => "input-large", :placeholder => "Search Events") %>
+  <div class="input-append">
+    <%= text_field_tag("date", params[:date], :class => "input-small datePicker", :placeholder => "Date") %>
+    <span class="add-on"><i class="icon-calendar"></i></span>
+  </div>
+  <%= button_tag(:class => "btn") do %>
+    <i class="icon-search"></i> Search
+  <% end -%>
+<% end -%>

@@ -6,6 +6,7 @@ Apacerita::Application.routes.draw do
 
   resources :events do
     get :map, :on => :member
+    get :search, :on => :collection
   end
 
   # The priority is based upon order of creation:

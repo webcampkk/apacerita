@@ -1,0 +1,119 @@
+@import "colors";
+/*
+  glDatePicker default style
+
+  http://code.gautamlad.com/glDatePicker/
+  https://github.com/glad/glDatePicker/
+*/
+
+#date-gldp {
+  z-index: 100;
+}
+
+/* Calendar container div */
+.gldp-default
+{
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.296875) 0px 0px 10px 0px;
+  float:left;
+  background-color:#fafafa;
+  color: #535353;
+  font-size: 12px;
+  border:solid 1px #888;
+}
+
+/* Table style */
+.gldp-default table
+{
+  border-spacing:1px;
+  border-collapse:inherit;
+}
+
+/* Default row height */
+.gldp-default tr
+{
+  line-height:24px;
+}
+
+/* Default style of cell */
+.gldp-default td
+{
+  margin:0;
+  padding:0;
+  width:28px;
+  text-align:center;
+}
+
+/* Previous and Next arrows */
+.gldp-default-prevnext
+{
+  color:#535353;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* Month Year title */
+.gldp-default-monyear
+{
+  color:#535353;
+  font-weight:bold;
+}
+
+/* Days of the week (Sun, Mon, ...) */
+.gldp-default-dow
+{
+  font-size:0.8em !important;
+  font-weight:bold;
+}
+
+/* Selectable days */
+.gldp-default-day
+{
+  background-color:#E7E9D9;
+  color:#222;
+}
+.gldp-default-day-hover
+{
+  background-color:$blue;
+  color: $white_background;
+  cursor:pointer;
+}
+
+/* Selected days */
+.gldp-default-selected
+{
+  background-color:$blue;
+  color: $white_background;
+  cursor:pointer;
+}
+
+/* Today */
+.gldp-default-today
+{
+  background-color:#fefbaf;
+}
+.gldp-default-today-hover
+{
+  background-color:$blue;
+  color: $white_background;
+  cursor:pointer;
+}
+
+/* Weekends */
+.gldp-default-sat, .gldp-default-sun
+{
+  background-color:#E7E9D9;
+}
+.gldp-default-sat-hover, .gldp-default-sun-hover
+{
+  background-color:$blue;
+  color: $white_background;
+  cursor:pointer;
+}
+
+/* Non-selectable day.  Includes:previous/next month days and days that fall in the allowOld and endDate conditions */
+.gldp-default-noday
+{
+  color: $dark_grey;
+  cursor:wait;
+}
