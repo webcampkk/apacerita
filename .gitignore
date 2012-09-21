@@ -14,3 +14,14 @@
 /log/*.log
 /tmp
 /config/database.yml
+
+#Ignore Capistrano deployment files.
+/Capfile
+/config/deploy.rb
+/config/deploy/production.rb
+/config/deploy/staging.rb
+/config/unicorn/unicorn_template.rb.erb
+/lib/recipes/database.rb
+/lib/recipes/deploy_tasks.rb
+/lib/recipes/info.rb
+/lib/recipes/unicorn.rb
