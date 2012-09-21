@@ -15,8 +15,11 @@ class Event < ActiveRecord::Base
 
   before_save :qualify_website_address, :set_date_for_time
 
-  scope :upcoming, where(["start_date >= ?", Date.today])
+  scope :upcoming, lambda { |date = Date.today| where(["start_date >= ?", date]) }
   scope :soon, order("start_date ASC")
+  scope :search, lambda { |keyword|
+    where(["name LIKE :query OR venue LIKE :query OR description LIKE :query", :query => "%#{keyword}%"])
+  }
 
   def time
     time_str = ""
