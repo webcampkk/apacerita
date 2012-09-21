@@ -27,7 +27,7 @@ ActiveAdmin.register Event do
 
     f.inputs "Location information" do
       f.input :latitude
-      f.input :longitude
+      f.input :longitude, :hint => render(:partial => "active_admin/shared/map", :locals => { :event => f.object, :editable => true })
     end
 
     f.inputs "Contact Information" do
@@ -38,6 +38,7 @@ ActiveAdmin.register Event do
       f.input :website
       f.input :email
     end
+
 
     f.buttons
   end
@@ -54,8 +55,6 @@ ActiveAdmin.register Event do
       row :longitude
       row "location" do |e|
         render :partial => "active_admin/shared/map", :locals => { :event => e }
-        #gmaps4rails(o.to_gmaps4rails)
-        #gmaps(:markers => { data: o.to_gmaps4rails }, :map_options =>  { auto_zoom: false, zoom: 18 })
       end
       row :description
       row :organizer
