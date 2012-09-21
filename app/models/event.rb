@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  acts_as_gmappable :process_geocoding => false, :check_process => false
+  acts_as_gmappable :process_geocoding => :geocode_if_no_coordinates, :check_process => false
 
   attr_accessible :name, :venue, :start_date, :end_date, :start_time, :end_time,
                   :longitude, :latitude, :description, :organizer, :contact_person,
@@ -52,6 +52,10 @@ protected
 
   def set_date_for_time
     
+  end
+
+  def geocode_if_no_coordinates
+    latitude.blank? or longitude.blank?
   end
 
 end
