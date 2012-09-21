@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
 
+  acts_as_gmappable :process_geocoding => true, :check_process => false
+
   attr_accessible :name, :venue, :start_date, :end_date, :start_time, :end_time,
                   :longitude, :latitude, :description, :organizer, :contact_person,
                   :phone_number, :fax_number, :website, :email, :category_id
@@ -23,14 +25,23 @@ class Event < ActiveRecord::Base
       time_str += "#{start_time.strftime("%I:%M %p")}" 
     end
     unless end_time.blank?
+      time_str += " \u2014"
       time_str += " #{end_date.strftime("%e %b")} -" if start_date != end_date and !end_date.blank?
-      time_str += " \u2014 #{end_time.strftime("%I:%M %p")}" 
+      time_str += " #{end_time.strftime("%I:%M %p")}" 
     end
   end
 
   def location
-    return venue unless venue.blank?
-    return [latitude, longitude]
+    return [latitude, longitude] unless latitude.blank?
+    full_address
+  end
+
+  def gmaps4rails_address
+    full_address
+  end
+
+  def full_address
+    "#{venue}, Kota Kinabalu, Sabah, Malaysia"
   end
 
 protected

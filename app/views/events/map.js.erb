@@ -1,0 +1,19 @@
+$("#map-modal").modal({ keyboard: false });
+$("#map-modal .modal-header h3").html('<%= @event.name %>');
+$("#map-modal .modal-body").html('<%= escape_javascript( gmaps({:last_map => false}) ) %>');
+
+Gmaps.map = new Gmaps4RailsGoogle();
+Gmaps.load_map = function() {
+    Gmaps.map.map_options.auto_zoom = false;
+    Gmaps.map.map_options.zoom = 16;
+    Gmaps.map.initialize();
+    Gmaps.map.markers = <%= raw @event.to_gmaps4rails %>;
+    Gmaps.map.create_markers();
+    Gmaps.map.adjustMapToBounds();
+    Gmaps.map.callback();
+};
+
+$("#map-modal").on('shown', function() {
+  Gmaps.loadMaps();
+});
+

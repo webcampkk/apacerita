@@ -2,13 +2,13 @@
   <span class="event-category"><%= event.category.name %></span>
   
   <div class="event-map-image-container">
-    <%= link_to static_google_map_image(location: event.location), "#" %>
+    <%= link_to static_google_map_image(location: event.location), map_event_path(event), :remote => true %>
   </div>
 
   <h2 class="overflow-hidden"><%= event.name %></h2>
   <div class="event-date-venue">
     <span class="date"><i class="icon-calendar"></i><%= event_date_range(event) %></span>
-    <h4 class="venue"><i class="icon-map-marker"></i><%= link_to truncate(event.venue, :length => 35), "#" %></h4>
+    <h4 class="venue"><i class="icon-map-marker"></i><%= link_to truncate(event.venue, :length => 35), map_event_path(event), :remote => true %></h4>
   </div>
 
   <%= simple_format event.description %>

@@ -6,14 +6,6 @@ html, body {
   padding: 0;
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
 .overflow-hidden {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -107,5 +99,16 @@ footer {
   }
   a[rel=next] {
     float: right;
+  }
+}
+
+#map-modal {
+  .map_container {
+    width: 515px;
+    height: 380px;
+  }
+  .gmaps4rails_map {
+    width: 515px;
+    height: 380px;
   }
 }
