@@ -1,0 +1,20 @@
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=true'></script>
+<script type="text/javascript" src='http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/markerclusterer_compiled.js'></script>
+
+<div class="map_container">
+  <div id="map" class="gmaps4rails_map"></div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+ Gmaps.map = new Gmaps4RailsGoogle();
+  Gmaps.load_map = function() {
+      Gmaps.map.map_options.auto_zoom = false;
+      Gmaps.map.map_options.zoom = 16;
+      Gmaps.map.initialize();
+      Gmaps.map.markers = <%= raw event.to_gmaps4rails %>;
+      Gmaps.map.create_markers();
+      Gmaps.map.adjustMapToBounds();
+      Gmaps.map.callback();
+  };
+  Gmaps.loadMaps();
+</script>
