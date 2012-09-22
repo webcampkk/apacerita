@@ -41,4 +41,23 @@ ActiveAdmin::Dashboards.build do
   # section "Membership Summary", :if => :memberships_enabled?
   # section "Membership Summary", :if => Proc.new { current_admin_user.account.memberships.any? }
 
+  section "Statistics", :priority => 1 do
+
+    div do
+      h4 "Events: #{Event.count}", :style => "margin-bottom:5px;"
+      h4 "Categories: #{Category.count}", :style => "margin-bottom:5px;"
+    end
+
+  end
+
+  section "Recent Comments", :priority => 2 do
+    ActiveAdmin::Comment.order("created_at DESC").limit(10).each do |comment|
+      ul do
+        li do
+          link_to truncate(comment.body, :length => 100), admin_comment_path(comment)
+        end
+      end
+    end
+  end
+
 end
