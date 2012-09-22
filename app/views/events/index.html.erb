@@ -3,11 +3,7 @@
 <div class="span12">
   <% if !@events.blank? %>
     <%= render @events %>
-    <div class="pagination">
-      <%= link_to_next_page @events, 'Next Page' %>
-      <%= link_to_previous_page @events, 'Previous Page' %>
-      <%= page_entries_info @events %>
-    </div>
+    <%= paginate @events, :theme => 'twitter-bootstrap' %>
   <% elsif @events.blank? and params[:q] %>
     <div class="blank-state">
       <h2>Ooops... Can't find any events</h2>

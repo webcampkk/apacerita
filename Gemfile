@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'activeadmin'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'gmaps4rails'
 
 # Gems used only for assets and not required
