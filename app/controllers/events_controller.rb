@@ -3,14 +3,14 @@ class EventsController < ApplicationController
   before_filter :find_event, :only => [:show, :map]
 
   def index
-    @events = Event.upcoming.soon.page(params[:page]).per(10)
+    @events = Event.upcoming.soon.page(params[:page])
   end
 
   def search
     if params[:q].blank? and params[:date].blank?
       index
     else
-      @events = Event.search(params[:q]).upcoming(params[:date].try(:to_date)).soon.page(params[:page]).per(10)
+      @events = Event.search(params[:q]).upcoming(params[:date].try(:to_date)).soon.page(params[:page])
     end
     render :index
   end

@@ -15,6 +15,8 @@ class Event < ActiveRecord::Base
 
   before_save :qualify_website_address, :set_date_for_time
 
+  paginates_per 10
+
   scope :upcoming, lambda { |date = Date.today| 
     date ||= Date.today
     where(["start_date >= ?", date]) 
