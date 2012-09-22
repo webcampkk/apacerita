@@ -7,8 +7,11 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:q]).upcoming(params[:date].try(:to_date)).soon.page(params[:page]).per(10)
-
+    if params[:q].blank? and params[:date].blank?
+      index
+    else
+      @events = Event.search(params[:q]).upcoming(params[:date].try(:to_date)).soon.page(params[:page]).per(10)
+    end
     render :index
   end
 
