@@ -122,6 +122,9 @@ footer {
 }
 
 #map-modal {
+  .modal-body {
+    overflow-y: none;
+  }
   .map_container {
     width: 515px;
     height: 380px;
