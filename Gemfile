@@ -34,7 +34,9 @@ gem 'jquery-rails'
 
 # Use thin as the dev server
 group :development do
-  gem 'thin'
+  unless RUBY_PLATFORM =~ /win32/ 
+    gem 'thin'
+  end
 end
 
 # Use unicorn as the app server 
