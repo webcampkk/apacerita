@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_filter :find_event, :only => [:show, :map]
-  respond_to :html
+  before_filter :set_up_ayah, :only => [:new, :create]
 
   def new
     @event = Event.new
@@ -9,8 +9,13 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.save
-    respond_with(@event, :location => events_path)
+    ayah_passed = @ayah.score_result(params[:session_secret], request.remote_ip)
+
+    if @event.save and ayah_passed
+      redirect_to events_path
+    else
+      render :new
+    end
   end
 
   def index
@@ -29,6 +34,10 @@ class EventsController < ApplicationController
 protected
   def find_event
     @event = Event.approved.find(params[:id])
+  end
+
+  def set_up_ayah
+    @ayah = AYAH::Integration.new(SystemPreferences.ayah_publisher_key, SystemPreferences.ayah_scoring_key)
   end
 
   def event_params

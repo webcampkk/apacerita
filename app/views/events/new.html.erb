@@ -29,6 +29,12 @@
     <%= f.input :website %>
     <%= f.input :email %>
 
+    <div class="control-group">
+      <div class="controls">
+        <%= @ayah.get_publisher_html.html_safe %>
+      </div>
+    </div>
+
     <div class="form-actions">
       <%= f.button :submit, :class => "btn-primary" %>
     </div>
