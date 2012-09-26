@@ -12,6 +12,9 @@ gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'gmaps4rails'
 gem 'state_machine'
+gem 'simple_form'
+gem 'strong_parameters', :git => "git://github.com/rails/strong_parameters.git"
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -107,3 +107,29 @@
     left: 20px;
   }
 }
+
+form.new-event {
+  div.control-group.date {
+    select.date, select.time {
+      width: 50px;
+    }
+    select.date:nth-child(2) {
+      width: 120px;  
+    }
+    select.date:nth-child(3) {
+      width: 80px;  
+    }
+  }
+  select.time {
+    width: 50px;
+  }
+
+  .map_container {
+    width: 620px;
+    height: 400px;
+    #map {
+      width: 620px;
+      height: 400px;
+    }
+  }
+}

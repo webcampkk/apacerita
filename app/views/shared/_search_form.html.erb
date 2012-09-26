@@ -1,3 +1,5 @@
+<%= link_to "Add your Event to the list!", new_event_path %>
+
 <%= form_tag search_events_path, :class => "form-search", :method => :get do %>
   <%= text_field_tag("q", params[:q], :class => "input-medium", :placeholder => "Search Events") %>
   <div class="input-append">

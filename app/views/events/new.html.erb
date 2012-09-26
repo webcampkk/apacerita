@@ -1,0 +1,37 @@
+<% content_for(:title, "Add your Event to ApaCerita") %>
+
+<div class="span12">
+  <%= simple_form_for(@event, :html => {:class => 'form-horizontal well new-event' }) do |f| %>
+    <legend>Add your Event to ApaCerita</legend>
+    <%= f.association :category %>
+    <%= f.input :name %>
+    <%= f.input :venue, :hint => "A short description for location of event.", :input_html => { maxlength: 35 } %>
+    <%=  f.input :start_date, :hint => "Only start date is required", :order => [:day, :month, :year] %>
+    <%= f.input :end_date, :order => [:day, :month, :year], :include_blank => true %>
+    <%= f.input :start_time, :as => :time, :include_blank => true %>
+    <%= f.input :end_time, :as => :time, :include_blank => true %>
+    <%= f.input :description, :input_html => { :rows => 5, :class => "span8"} %>
+
+    <%= f.input :latitude, :as => :hidden, :wrapper => false %>
+    <%= f.input :longitude, :as => :hidden, :wrapper => false %>
+
+    <div class="control-group">
+      <label class="control-label">Location</label>
+      <div class="controls">
+        <%= render :partial => "active_admin/shared/map", :locals => { :event => @event, :editable => true } %>
+      </div>
+    </div>
+
+    <%= f.input :organizer %>
+    <%=  f.input :contact_person %>
+    <%= f.input :phone_number %>
+    <%= f.input :fax_number %>
+    <%= f.input :website %>
+    <%= f.input :email %>
+
+    <div class="form-actions">
+      <%= f.button :submit, :class => "btn-primary" %>
+    </div>
+  <% end -%>
+
+</div>

@@ -60,11 +60,20 @@ header {
   }
 
   .pull-right {
-    margin: 34px 0 0 0;
+    margin: 5px 0 0 0;
+    text-align: right;
 
-    select {
-      width: 110px;
+    form {
+      margin-top: 10px;
+      select {
+        width: 110px;
+      }
     }
+
+    a {
+
+    }
+    
   }
 }
 
