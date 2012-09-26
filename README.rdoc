@@ -17,6 +17,14 @@ Event listing site for Kota Kinabalu, Sabah, Malaysia
   bundle exec rake db:seed
   bundle exec rails server
 
+== Setting up Are You A Human (AYAH)
+
+Go to www.areyouahuman.com and register an account. Then setup the keys 
+
+  rails c
+  SystemPreferences.ayah_publisher_key = "PUBLISHER_KEY"
+  SystemPreferences.ayah_scoring_key = "SCORING_KEY"
+
 == Dependencies 
 
   Refer to Gemfile
