@@ -5,7 +5,7 @@
   background-color: $white_background;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.297) 0px 0px 6px 0px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 35px 20px;
   margin-bottom: 20px;
   min-height: 240px;
 
@@ -98,5 +98,11 @@
         border-bottom: 1px dotted $default_link_hover_color;
       }
     }
+  }
+
+  .social-buttons {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
   }
 }
