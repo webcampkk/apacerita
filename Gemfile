@@ -11,6 +11,7 @@ gem 'activeadmin'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'gmaps4rails'
+gem 'state_machine'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -18,6 +18,19 @@ class Event < ActiveRecord::Base
 
   paginates_per 10
 
+  state_machine :state, :initial => :new do
+    event :approve do
+      transition all => :approved
+    end
+
+    event :reject do
+      transition all => :rejected
+    end
+  end
+
+  scope :pending, where(:state => "new")
+  scope :approved, where(:state => "approved")
+  scope :rejected, where(:state => "rejected")
   scope :upcoming, lambda { |date = Date.today| 
     date ||= Date.today
     where(["start_date >= ?", date]) 

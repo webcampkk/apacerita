@@ -1,7 +1,14 @@
 ActiveAdmin.register Event do
-  menu priority: 1  
+  menu priority: 1, :if => proc{ false }
+
+  actions :all, :except => [:destroy]
 
   index do
+    column "State" do |event|
+      status_tag(event.state, :warn) if event.new?
+      status_tag(event.state, :ok) if event.approved?
+      status_tag(event.state, :error) if event.rejected?
+    end
     column "Category" do |event|
       status_tag(event.category.name, :ok) unless event.category.blank?
     end
@@ -11,6 +18,10 @@ ActiveAdmin.register Event do
     end
     column :venue
     default_actions
+    column "" do |event|
+      link_to("Approve", approve_admin_event_path(event), :method => :put, :confirm => "Are you sure?") + "&nbsp;&nbsp;".html_safe +
+      link_to("Reject", reject_admin_event_path(event), :method => :put, :confirm => "Are you sure?")
+    end
   end
 
   form do |f|
@@ -18,7 +29,7 @@ ActiveAdmin.register Event do
       f.input :category
       f.input :name
       f.input :venue, :hint => "A short description for location of event.", :input_html => { maxlength: 35 }
-      f.input :start_date
+      f.input :start_date, :hint => "Only start date is required"
       f.input :end_date
       f.input :start_time, :as => :time
       f.input :end_time, :as => :time
@@ -65,6 +76,18 @@ ActiveAdmin.register Event do
       row :email
     end
     active_admin_comments
+  end
+
+  member_action :approve, :method => :put do
+    event = Event.find(params[:id])
+    event.approve!
+    redirect_to admin_events_path, :notice => "Event #{event.id} approved!"
+  end
+
+  member_action :reject, :method => :put do
+    event = Event.find(params[:id])
+    event.reject!
+    redirect_to admin_events_path, :notice => "Event #{event.id} rejected!"
   end
 
 end
