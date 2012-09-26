@@ -1,5 +1,5 @@
 ActiveAdmin.register Event do
-  menu priority: 1, :if => proc{ false }
+  menu priority: 1
 
   actions :all, :except => [:destroy]
 
