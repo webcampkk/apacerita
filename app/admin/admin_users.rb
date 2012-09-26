@@ -2,6 +2,8 @@ ActiveAdmin.register AdminUser do
 
   menu priority: 3, parent: "Admin"
 
+  actions :all, :except => [:new, :edit, :update, :destroy]
+
   index do
     column :email
     column :current_sign_in_at
