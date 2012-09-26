@@ -3,7 +3,7 @@ ActiveAdmin.register Event do
 
   index do
     column "Category" do |event|
-      status_tag(event.category.name, :ok)
+      status_tag(event.category.name, :ok) unless event.category.blank?
     end
     column :name
     column "Date/Time" do |event|

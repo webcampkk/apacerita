@@ -1,5 +1,7 @@
 <section class="event clearfix">
-  <span class="event-category"><%= event.category.name %></span>
+  <% unless event.category.blank? %>
+    <span class="event-category"><%= event.category.name %></span>
+  <% end -%>
   
   <div class="event-map-image-container">
     <%= link_to static_google_map_image(location: event.location), map_event_path(event), :remote => true %>
