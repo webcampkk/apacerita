@@ -111,7 +111,7 @@
 form.new-event {
   div.control-group.date {
     select.date, select.time {
-      width: 50px;
+      width: 60px;
     }
     select.date:nth-child(2) {
       width: 120px;  
@@ -121,7 +121,7 @@ form.new-event {
     }
   }
   select.time {
-    width: 50px;
+    width: 60px;
   }
 
   .map_container {
