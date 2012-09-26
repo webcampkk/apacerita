@@ -12,7 +12,7 @@
   <% else %>
     <div class="blank-state">
       <h2>Hmmm... Odd... No Events...</h2>
-      <p>If you know about an upcoming event, let us know!</p>
+      <p>If you know about an upcoming event, <%= link_to "add it here!", new_event_path %></p>
     </div>
   <% end -%>
 </div>
