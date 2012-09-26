@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 
-  acts_as_gmappable :process_geocoding => :geocode_if_no_coordinates, :check_process => false
+  acts_as_gmappable :process_geocoding => :geocode_if_no_coordinates, 
+                    :check_process => false, :validation => false
 
   attr_accessible :name, :venue, :start_date, :end_date, :start_time, :end_time,
                   :longitude, :latitude, :description, :organizer, :contact_person,
