@@ -41,6 +41,10 @@ class Event < ActiveRecord::Base
     where(["name LIKE :query OR venue LIKE :query OR description LIKE :query", :query => "%#{keyword}%"])
   }
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
   def time
     time_str = ""
     unless start_time.blank?
