@@ -56,6 +56,7 @@ ActiveAdmin.register Event do
 
   show do |event|
     attributes_table do
+      row :category
       row :name
       row :start_date
       row :end_date
