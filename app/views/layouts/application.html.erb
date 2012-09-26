@@ -29,6 +29,7 @@
 
     <div class="container">
       <div class="row">
+        <%= render :partial => "shared/flash", :locals => { :flash => flash } %>
         <%= yield %>
       </div>
     </div>

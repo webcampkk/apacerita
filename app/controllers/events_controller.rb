@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
     if @event.valid? and ayah_passed
       @event.save
+      flash[:success] = "Event submitted! It will show up on the site once it's approved. Thanks!"
       redirect_to events_path
     else
       render :new
