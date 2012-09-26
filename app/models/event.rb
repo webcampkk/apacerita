@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
   belongs_to :category
 
   before_save :qualify_website_address
-  after_initialize :set_default_location
+  after_initialize :set_default_values
 
   paginates_per 10
 
@@ -73,9 +73,10 @@ protected
     self.website = "http://#{website}" unless website.starts_with?("http://")
   end
 
-  def set_default_location
-    self.latitude ||= 5.981296120253001
-    self.longitude ||= 116.07473399734499
+  def set_default_values
+    self.latitude = 5.981296120253001 if latitude.zero? or latitude.blank?
+    self.longitude = 116.07473399734499 if longitude.zero? or longitude.blank?
+    self.start_date ||= Date.today
   end
 
   def geocode_if_no_coordinates
