@@ -14,7 +14,7 @@ ActiveAdmin.register Event do
     end
     column :name
     column "Date/Time" do |event|
-      "#{event.start_date.strftime("%e %b")} - #{event.time}"
+      "#{event.start_date.strftime("%e %b")}" + (event.end_date.blank? ? "" : " - #{event.end_date.strftime("%e %b")} " )
     end
     column :venue
     default_actions
