@@ -7,10 +7,10 @@ class EventsController < ApplicationController
   end
 
   def search
-    if params[:q].blank? and params[:date].blank?
+    if params[:q].blank? and params[:date].blank? and params[:category].blank?
       index
     else
-      @events = Event.search(params[:q]).approved.upcoming(params[:date].try(:to_date)).soon.page(params[:page])
+      @events = Event.search(params[:q]).approved.in_category(params[:category]).upcoming(params[:date].try(:to_date)).soon.page(params[:page])
     end
     render :index
   end

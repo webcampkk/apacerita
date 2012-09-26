@@ -40,6 +40,9 @@ class Event < ActiveRecord::Base
   scope :search, lambda { |keyword|
     where(["name LIKE :query OR venue LIKE :query OR description LIKE :query", :query => "%#{keyword}%"])
   }
+  scope :in_category, lambda { |category| 
+    where(:category_id => category) unless category.blank?
+  }
 
   def to_param
     "#{id}-#{name.parameterize}"
