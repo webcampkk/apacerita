@@ -11,7 +11,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     ayah_passed = @ayah.score_result(params[:session_secret], request.remote_ip)
 
-    if @event.save and ayah_passed
+    if @event.valid? and ayah_passed
+      @event.save
       redirect_to events_path
     else
       render :new
