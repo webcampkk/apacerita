@@ -74,8 +74,8 @@ protected
   end
 
   def set_default_location
-    self.latitude = 5.981296120253001
-    self.longitude = 116.07473399734499
+    self.latitude ||= 5.981296120253001
+    self.longitude ||= 116.07473399734499
   end
 
   def geocode_if_no_coordinates
