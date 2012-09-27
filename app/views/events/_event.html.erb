@@ -1,4 +1,4 @@
-<section class="event clearfix">
+<section class="event clearfix" id="event-<%= event.id %>">
   <% unless event.category.blank? %>
     <span class="event-category"><%= event.category.name %></span>
   <% end -%>
@@ -13,7 +13,17 @@
     <h4 class="venue"><i class="icon-map-marker"></i><%= link_to truncate(event.venue, :length => 35), map_event_path(event), :remote => true %></h4>
   </div>
 
-  <%= simple_format event.description %>
+  <div class="event-short-description">
+    <%= truncate(event.description, :length => 450) %>
+    <% if event.description.length > 450 %>
+      <%= link_to "Show more", "#", :class => "show-more", "data" => { :id => event.id } %>
+    <% end -%>
+  </div>
+
+  <div class="event-full-description hide">
+    <%= simple_format event.description %>
+    <%= link_to "Show less", "#", :class => "show-less", "data" => { :id => event.id } %>
+  </div>
 
   <div class="event-contact-info clearfix">
     <% unless event.time.blank? %>

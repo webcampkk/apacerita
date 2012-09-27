@@ -1,3 +1,16 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $("body").on({
+    click: ->
+       id = $(@).attr("data-id")
+       $("#event-" + id + " .event-short-description").hide()
+       $("#event-" + id + " .event-full-description").show()
+       return false
+  }, "a.show-more")
+
+  $("body").on({
+    click: ->
+       id = $(@).attr("data-id")
+       $("#event-" + id + " .event-short-description").show()
+       $("#event-" + id + " .event-full-description").hide()
+       return false
+  }, "a.show-less")
