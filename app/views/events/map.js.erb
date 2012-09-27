@@ -1,4 +1,3 @@
-$("#map-modal").modal({ keyboard: false });
 $("#map-modal .modal-header h3").html('<%= @event.name %>');
 $("#map-modal .modal-body").html('<%= escape_javascript( gmaps({:last_map => false}) ) %>');
 
@@ -16,4 +15,6 @@ Gmaps.load_map = function() {
 $("#map-modal").on('shown', function() {
   Gmaps.loadMaps();
 });
+
+$("#map-modal").modal({ keyboard: false });
 
