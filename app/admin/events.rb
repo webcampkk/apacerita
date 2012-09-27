@@ -1,9 +1,14 @@
 ActiveAdmin.register Event do
   menu priority: 1
 
+  scope :all
+  scope :pending, :default => true
+  scope :approved
+  scope :rejected
+
   actions :all, :except => [:destroy]
 
-  index do
+  index :download_links => false do
     column "State" do |event|
       status_tag(event.state, :warn) if event.new?
       status_tag(event.state, :ok) if event.approved?
