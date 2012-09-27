@@ -19,10 +19,6 @@ body {
   background: $light_blue_sky -webkit-gradient(linear, left top, left bottom, from($blue_sky), to($light_blue_sky)) no-repeat;
   /* Mozilla,Firefox/Gecko */
   background: $light_blue_sky -moz-linear-gradient(top, $blue_sky, $light_blue_sky) no-repeat;
-  /* IE 5.5 - 7 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue_sky, endColorstr=$light_blue_sky) no-repeat;
-  /* IE 8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$blue_sky, endColorstr=$light_blue_sky)" no-repeat;
 
   padding-top: 0;
   font-family: 'Open Sans', sans-serif;
@@ -87,11 +83,6 @@ footer {
   background: $green_land -webkit-gradient(linear, left top, left bottom, from($green_land), to($dark_green_land)) no-repeat;
   /* Mozilla,Firefox/Gecko */
   background: $green_land -moz-linear-gradient(top, $green_land, $dark_green_land) no-repeat;
-  /* IE 5.5 - 7 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$green_land, endColorstr=$dark_green_land) no-repeat;
-  /* IE 8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=$green_land, endColorstr=$dark_green_land)" no-repeat;
-
   width: 100%;
 
   .footer-message {
