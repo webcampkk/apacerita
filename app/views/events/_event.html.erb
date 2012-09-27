@@ -14,8 +14,8 @@
   </div>
 
   <div class="event-short-description">
-    <%= truncate(event.description, :length => 450) %>
-    <% if event.description.length > 450 %>
+    <p><%= truncate(event.description, :length => 350) %></p>
+    <% if event.description.length > 350 %>
       <%= link_to "Show more", "#", :class => "show-more", "data" => { :id => event.id } %>
     <% end -%>
   </div>
