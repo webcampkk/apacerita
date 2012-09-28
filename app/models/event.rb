@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   scope :rejected, where(:state => "rejected")
   scope :upcoming, lambda { |date = Date.today| 
     date ||= Date.today
-    where(["start_date >= ?", date]) 
+    where(["start_date >= :date OR (start_date <= :date AND end_date >= :date)", { :date => date }]) 
   }
   scope :soon, order("start_date ASC")
   scope :search, lambda { |keyword|
