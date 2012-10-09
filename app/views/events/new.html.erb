@@ -22,12 +22,20 @@
       </div>
     </div>
 
+    <legend>Organizer Info</legend>
+
     <%= f.input :organizer %>
-    <%=  f.input :contact_person %>
+    <%= f.input :contact_person %>
     <%= f.input :phone_number %>
     <%= f.input :fax_number %>
     <%= f.input :website %>
     <%= f.input :email %>
+
+    <legend>Your Info (Optional)</legend>
+
+    <%= f.input :submitter_name, :label => "Your name" %>
+    <%= f.input :submitter_website, :label => "Your website" %>
+    <%= f.input :submitter_email, :label => "Your email" %>
 
     <div class="control-group">
       <div class="controls">

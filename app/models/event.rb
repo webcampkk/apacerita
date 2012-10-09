@@ -5,7 +5,8 @@ class Event < ActiveRecord::Base
 
   attr_accessible :name, :venue, :start_date, :end_date, :start_time, :end_time,
                   :longitude, :latitude, :description, :organizer, :contact_person,
-                  :phone_number, :fax_number, :website, :email, :category_id
+                  :phone_number, :fax_number, :website, :email, :category_id,
+                  :submitter_name, :submitter_email, :submitter_website
 
   validates :name, :presence => true
   validates :venue, :presence => true
@@ -76,8 +77,8 @@ class Event < ActiveRecord::Base
 
 protected
   def qualify_website_address
-    return if website.blank?
-    self.website = "http://#{website}" unless website.starts_with?("http://")
+    self.website = "http://#{website}" if !website.starts_with?("http://") and !website.starts_with?("https://")
+    self.submitter_website = "http://#{submitter_website}" if !submitter_website.starts_with?("http://") and !submitter_website.starts_with?("https://")
   end
 
   def set_default_values

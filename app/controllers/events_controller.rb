@@ -45,7 +45,8 @@ protected
   def event_params
     params.require(:event).permit(:name, :venue, :start_date, :end_date, :start_time, :end_time,
                   :longitude, :latitude, :description, :organizer, :contact_person,
-                  :phone_number, :fax_number, :website, :email, :category_id)
+                  :phone_number, :fax_number, :website, :email, :category_id,
+                  :submitter_name, :submitter_email, :submitter_website)
   end
 
 end
