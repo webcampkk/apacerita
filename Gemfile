@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'strong_parameters', :git => "git://github.com/rails/strong_parameters.git"
 gem 'ayah_integration'
 gem "rails-settings-cached"
+gem 'rinku', :require => 'rails_rinku'
 
 # Gems used only for assets and not required
 # in production environments by default.

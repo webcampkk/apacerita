@@ -14,3 +14,5 @@ $ ->
        $("#event-" + id + " .event-full-description").hide()
        return false
   }, "a.show-less")
+
+  $("[rel=tooltip]").tooltip()
