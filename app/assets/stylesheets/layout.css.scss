@@ -25,10 +25,12 @@ body {
 }
 
 .page {
+  background: url('/assets/buildings.png') no-repeat bottom;
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -180px;
+  margin: 0 auto -200px;
+  padding-bottom: 250px;
 }
 
 header {
