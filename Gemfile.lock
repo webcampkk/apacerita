@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rails/strong_parameters.git
-  revision: 36024e468b7e67eaf15db555e76ea3afda4ebcdb
+  revision: 0e65417323c5c8e6fb8af48690f500792be80c91
   specs:
     strong_parameters (0.1.4)
       actionpack (>= 3.2.0)
