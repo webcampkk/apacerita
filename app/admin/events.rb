@@ -55,6 +55,12 @@ ActiveAdmin.register Event do
       f.input :email
     end
 
+    f.inputs "Submitter Information" do
+      f.input :submitter_name
+      f.input :submitter_email
+      f.input :submitter_website
+    end
+
 
     f.buttons
   end
