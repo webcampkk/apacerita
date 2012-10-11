@@ -80,6 +80,9 @@ ActiveAdmin.register Event do
       row :fax_number
       row :website
       row :email
+      row :submitter_name
+      row :submitter_email
+      row :submitter_website
     end
     active_admin_comments
   end
