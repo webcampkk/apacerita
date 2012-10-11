@@ -77,8 +77,8 @@ class Event < ActiveRecord::Base
 
 protected
   def qualify_website_address
-    self.website = "http://#{website}" if !website.starts_with?("http://") and !website.starts_with?("https://")
-    self.submitter_website = "http://#{submitter_website}" if !submitter_website.starts_with?("http://") and !submitter_website.starts_with?("https://")
+    self.website = "http://#{website}" if !website.blank? and if !website.starts_with?("http://") and !website.starts_with?("https://")
+    self.submitter_website = "http://#{submitter_website}" if !submitter_website.blank? and !submitter_website.starts_with?("http://") and !submitter_website.starts_with?("https://")
   end
 
   def set_default_values
