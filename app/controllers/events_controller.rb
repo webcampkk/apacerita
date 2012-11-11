@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.approved.upcoming.soon.page(params[:page])
+    @events = Event.approved.upcoming.nearest_first.page(params[:page])
   end
 
   def search

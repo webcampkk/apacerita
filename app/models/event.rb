@@ -16,6 +16,7 @@ class Event < ActiveRecord::Base
   belongs_to :category
 
   before_save :qualify_website_address
+  before_save :set_end_date_if_needed
   after_initialize :set_default_values
 
   paginates_per 10
@@ -44,6 +45,10 @@ class Event < ActiveRecord::Base
   scope :in_category, lambda { |category| 
     where(:category_id => category) unless category.blank?
   }
+
+  def self.nearest_first
+    select("*, DATEDIFF(`end_date`, CURDATE()) AS diff").order("DIFF ASC")
+  end
 
   def to_param
     "#{id}-#{name.parameterize}"
@@ -85,6 +90,10 @@ protected
     self.latitude = 5.981296120253001 if latitude.zero? or latitude.blank?
     self.longitude = 116.07473399734499 if longitude.zero? or longitude.blank?
     self.start_date ||= Date.today
+  end
+
+  def set_end_date_if_needed
+    self.end_date = self.start_date if end_date.blank?
   end
 
   def geocode_if_no_coordinates
