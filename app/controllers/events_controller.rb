@@ -35,6 +35,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    respond_with(@event)
+  end
+
   def search
     if params[:q].blank? and params[:date].blank? and params[:category].blank?
       index
