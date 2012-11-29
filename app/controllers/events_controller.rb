@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   before_filter :find_event, :only => [:show, :map]
   before_filter :set_up_ayah, :only => [:new, :create]
 
+  respond_to :html, :json
+
   def new
     @event = Event.new
   end
@@ -21,7 +23,16 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.approved.upcoming.nearest_first.page(params[:page])
+    respond_to do |format|
+      format.html do
+        @events = Event.approved.upcoming.nearest_first.page(params[:page])
+        respond_with(@events)
+      end
+      format.json do
+        @events = Event.approved.upcoming.nearest_first.to_json
+        respond_with(@events)
+      end
+    end
   end
 
   def search
@@ -31,6 +42,10 @@ class EventsController < ApplicationController
       @events = Event.search(params[:q]).approved.in_category(params[:category]).upcoming(params[:date].try(:to_date)).soon.page(params[:page])
     end
     render :index
+  end
+
+  def test
+    render :layout => false
   end
 
 protected
