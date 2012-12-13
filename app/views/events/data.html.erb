@@ -1,0 +1,30 @@
+<div class="content-container span12">
+
+  <div class="content">
+    <article>
+      <h1>ApaCerita Events Data</h1>
+      <p>We provide 2 ways for you to gain access to our events data on ApaCerita.my</p>
+      <ul>
+        <li><%= link_to "Syndication with ATOM/RSS Feed", "#syndicate" %></li>
+        <li><%= link_to "JSON API for developers", "#json" %></li>
+      </ul>
+      <p>If you have any question, post it up on our <%= link_to "Webcamp KK Facebook Group", "http://www.fb.com/groups/webcamp.kk" %></p>
+    </article>
+
+    <article id="syndicate">
+      <h2>Syndication with ATOM/RSS Feed</h2>
+      <p>You can subscribe to ApaCerita ATOM feed at:</p>
+      <pre><%= link_to events_url(:format => :atom), events_url(:format => :atom) %></pre>
+      <p>This is useful for sites who would like to show ApaCerita events on their page directly. Just set your feed reader to this link.</p>
+    </article>
+
+    <article id="json">
+      <h2>JSON API for developers</h2>
+      <p>We also have a simple JSON API for developers who would like to build apps on top off our events data.</p>
+      <pre><%= link_to events_url(:format => :json), events_url(:format => :json) %> - all upcoming events</pre>
+      <pre><%= link_to "http://apacerita.my/events/[ID].json", "http://apacerita.my/events/[ID].json" %> - individual events</pre>
+      <p>More documentation soon :)</p>
+    </article>
+  </div>
+
+</div>

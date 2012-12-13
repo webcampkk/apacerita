@@ -52,10 +52,6 @@ class EventsController < ApplicationController
     render :index
   end
 
-  def test
-    render :layout => false
-  end
-
 protected
   def find_event
     @event = Event.approved.find(params[:id])

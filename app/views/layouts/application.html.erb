@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title><%= "[#{Rails.env.titleize}] " unless Rails.env.production? %><%= content_for?(:title) ? content_for(:title) : "ApaCerita" %></title></title>
+  <link type="application/atom+xml" rel="alternate" href="<%= events_url(:format => :atom) %>"/>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,400,700' rel='stylesheet' type='text/css'>
 
   <!-- Google maps -->
@@ -38,10 +39,16 @@
   <footer>
     <div class="container">
       <div class="footer-message">
-        ApaCerita is a Webcamp KK Community Project
+        ApaCerita is a <%= link_to "Webcamp KK", "http://www.fb.com/groups/webcamp.kk" %> Community Project
       </div>
       
-      <div class="fb-like" data-href="http://apacerita.my" data-send="true"  data-width="50" data-layout="box_count" data-show-faces="true" data-font="arial"></div>
+      
+      <div class="about-us">
+        <div class="fb-like" data-href="http://apacerita.my" data-send="true"  data-width="50" data-layout="box_count" data-show-faces="true" data-font="arial"></div>
+
+        <p>All the events listed here are submitted by the community. Be part of the community by <%= link_to "submitting events directly to us!", new_event_path %></p>
+        <p>Interested in syndicating or building an app with our data? <%= link_to "Check out this page.", data_events_path %> Don't worry, it's FREE!</p>
+      </div>
     </div>
   </footer>
   <%= render :partial => "shared/map_modal" %>
