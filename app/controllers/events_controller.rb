@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :find_event, :only => [:show, :map]
   before_filter :set_up_ayah, :only => [:new, :create]
 
-  respond_to :html, :json
+  respond_to :html, :json, :atom
 
   def new
     @event = Event.new
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    ayah_passed = @ayah.score_result(params[:session_secret], request.remote_ip)
+    ayah_passed = @ayah.score_result(params[:session_secret].gsub(".", ""), request.remote_ip)
 
     if @event.valid? and ayah_passed
       @event.save
@@ -30,6 +30,10 @@ class EventsController < ApplicationController
       end
       format.json do
         @events = Event.approved.upcoming.nearest_first.to_json
+        respond_with(@events)
+      end
+      format.atom do
+        @events = Event.approved.upcoming.nearest_first
         respond_with(@events)
       end
     end
