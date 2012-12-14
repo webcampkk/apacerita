@@ -29,10 +29,12 @@ class EventsController < ApplicationController
         respond_with(@events)
       end
       format.json do
+        Gabba::Gabba.new("UA-2589718-11", "apacerita.my").page_view("JSON Request", "events.json") if Rails.env.production?
         @events = Event.approved.upcoming.nearest_first.to_json
         respond_with(@events)
       end
       format.atom do
+        Gabba::Gabba.new("UA-2589718-11", "apacerita.my").page_view("ATOM Feed", "events.atom") if Rails.env.production?
         @events = Event.approved.upcoming.nearest_first
         respond_with(@events)
       end
@@ -40,7 +42,15 @@ class EventsController < ApplicationController
   end
 
   def show
-    respond_with(@event)
+    respond_to do |format|
+      format.html do
+        respond_with(@event)
+      end
+      format.json do
+        Gabba::Gabba.new("UA-2589718-11", "apacerita.my").page_view("JSON Request", "events/#{@event.id}.json") if Rails.env.production?
+        respond_with(@event)
+      end
+    end
   end
 
   def search
