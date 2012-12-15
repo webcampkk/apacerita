@@ -8,6 +8,10 @@
         <li><%= link_to "Syndication with ATOM/RSS Feed", "#syndicate" %></li>
         <li><%= link_to "JSON API for developers", "#json" %></li>
       </ul>
+      <p>Here are some examples how others are using our data.</p>
+      <ul>
+        <li><%= link_to "Events map using JSON API", "http://coderkk.blogspot.com/2012/12/apacerita-event-map.html" %></li>
+      </ul>
       <p>If you have any question, post it up on our <%= link_to "Webcamp KK Facebook Group", "http://www.fb.com/groups/webcamp.kk" %></p>
     </article>
 
@@ -21,9 +25,146 @@
     <article id="json">
       <h2>JSON API for developers</h2>
       <p>We also have a simple JSON API for developers who would like to build apps on top off our events data.</p>
-      <pre><%= link_to events_url(:format => :json), events_url(:format => :json) %> - all upcoming events</pre>
+      <p><pre><%= link_to events_url(:format => :json), events_url(:format => :json) %> - all upcoming events</pre>
       <pre><%= link_to "http://apacerita.my/events/[ID].json", "http://apacerita.my/events/[ID].json" %> - individual events</pre>
-      <p>More documentation soon :)</p>
+      </p><br />
+      <p>Table below list all the fields that is returned to you in JSON and their description</p>
+      <table class="table table-striped table-hover table-bordered">
+        <thead>
+        <tr>
+          <th>Field</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>category_id</td>
+            <td>Unique Identifier for type of Categories</br>
+            1.Exhibition</br>
+            2.Workshop</br>
+            3.Seminar</br>
+            4.Nightlife</br>
+            5.Meetup</br>
+            6.Opening</br>
+            7.Competition</br>
+            8.Concert</br>
+            9.Festival</br>
+            10.Charity</br>
+            11.Promotion</td>
+          </tr>
+
+          <tr>
+            <td>created_at</td>
+            <td>Date Time of Event Creation</td>
+          </tr>
+
+          <tr>
+            <td>description</td>
+            <td>Event Description</td>
+          </tr>
+
+          <tr>
+            <td>diff</td>
+            <td>Difference between event date and system date in number of days</td>
+          </tr>
+
+          <tr>
+            <td>email</td>    
+            <td>Organizer's Email address</td>
+          </tr>
+
+          <tr>
+            <td>end_date</td>    
+            <td>Event's End Date</td>
+          </tr>
+
+          <tr>
+            <td>end_time</td>
+            <td>Event's End Time</td>
+          </tr>
+
+          <tr>
+            <td>fax_number</td>
+            <td>Organizer's Fax Number</td>
+          </tr>
+
+          <tr>
+            <td>id</td>
+            <td>Event's Unique Identifier</td>
+          </tr>
+
+          <tr>
+            <td>latitude</td>
+            <td>Latitude coordinate on Google Maps of Event</td>
+          </tr>
+
+          <tr>
+            <td>longtitude</td>
+            <td>Longtitude coordinate on Google Maps of Event</td>
+          </tr>
+
+          <tr>
+            <td>name</td>
+            <td>Event name</td>
+          </tr>
+
+          <tr>
+            <td>organizer</td>
+            <td>Organizer's Name</td>
+          </tr>
+
+          <tr>
+            <td>phone_number</td>
+            <td>Organizer's Phone Number</td>
+          </tr>
+
+          <tr>
+            <td>start_date</td>
+            <td>Event Start Date</td>
+          </tr>
+
+          <tr>
+            <td>Start_time</td>
+            <td>Event Start Time</td>
+          </tr>
+
+          <tr>
+            <td>state</td>
+            <td>Event State "Approved" or "Rejected"</td>
+          </tr>
+
+          <tr>
+            <td>submitter_email</td>
+            <td>Email address of Event Submitter</td>
+          </tr>
+
+          <tr>
+            <td>submitter_name</td>
+            <td>Name of Event Submitter</td>
+          </tr>
+
+          <tr>
+            <td>submitter_website</td>
+            <td>Web site address of Even Submitter</td>
+          </tr>
+
+          <tr>
+            <td>updated_at</td>
+            <td>Date & Time of Event's Last Update</td>
+          </tr>
+
+          <tr>
+            <td>venue</td>
+            <td>Event venue</td>
+          </tr>
+
+          <tr>
+            <td>website</td>
+            <td>Website of event or organizer</td>
+          </tr>
+        </tbody>
+      </table>
+
     </article>
   </div>
 
