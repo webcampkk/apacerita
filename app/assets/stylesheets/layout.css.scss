@@ -175,3 +175,18 @@ footer {
     height: 380px;
   }
 }
+
+/*
+ * Socialite Look-a-like defaults
+ */
+
+.social-buttons { display: block; list-style: none; padding: 0; margin: 0; height: 20px; }
+.social-buttons > li { display: block; margin: 0; padding: 0; float: left; text-align: left; }
+.social-buttons > li > a { color: $light_grey; font-size: 12px; overflow: hidden; }
+.social-buttons .socialite { display: block; position: relative; }
+.social-buttons .socialite-loaded { background: none !important; }
+
+.social-buttons .twitter-share { width: 100px; height: 20px; }
+.social-buttons .googleplus-one { width: 100px; height: 20px; }
+.social-buttons .facebook-like { width: 100px; height: 20px; }
+.social-buttons .linkedin-share { width: 60px; height: 20px; background-position: -215px 0; }

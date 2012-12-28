@@ -16,3 +16,8 @@ $ ->
   }, "a.show-less")
 
   $("[rel=tooltip]").tooltip()
+
+  # Only load social buttons on hover
+  $("section.event").one('mouseenter', ->
+    Socialite.load($(@)[0])
+  )

@@ -1,6 +1,11 @@
-  <div class="social-buttons">
-    <div class="fb-like" data-href="<%= url %>" data-send="true" data-layout="button_count" data-width="50" data-show-faces="false" data-font="arial"></div>
-    <%= link_to url do %>
-      <i class="icon-link"></i> Link to this event
-    <% end -%>
-  </div>
+<ul class="social-buttons">
+  <li>
+    <a href="http://www.facebook.com/sharer.php?u=<%= url %>&amp;t=<%= title %>" class="socialite facebook-like" data-href="<%= url %>" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Facebook</span></a>
+  </li>
+  <li>
+    <a href="http://twitter.com/share" class="socialite twitter-share" data-text="<%= title %> - <%= url %>" data-url="<%= url %>" data-via="bahapacerita" data-count="horizontal" rel="nofollow" target="_blank"><span class="vhidden">Twitter</span></a>
+  </li>
+  <li>
+    <a href="https://plus.google.com/share?url=<%= url %>" class="socialite googleplus-one" data-size="medium" data-href="<%= url %>" rel="nofollow" target="_blank"><span class="vhidden">Google+</span></a>
+  </li>
+</ul>
