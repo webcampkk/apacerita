@@ -186,6 +186,7 @@ footer {
 .social-buttons .socialite { display: block; position: relative; }
 .social-buttons .socialite-loaded { background: none !important; }
 
+.social-buttons a.link { color: $default_link_color; width: 120px; display: inline-block; text-decoration: underline; }
 .social-buttons .twitter-share { width: 100px; height: 20px; }
 .social-buttons .googleplus-one { width: 100px; height: 20px; }
 .social-buttons .facebook-like { width: 100px; height: 20px; }

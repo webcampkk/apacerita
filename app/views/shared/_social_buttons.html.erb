@@ -1,5 +1,11 @@
 <ul class="social-buttons">
   <li>
+    <i class="icon-link"></i>
+    <%= link_to url, :class => "link" do %>
+       Link to this event
+    <% end -%>
+  </li>
+  <li>
     <a href="http://www.facebook.com/sharer.php?u=<%= url %>&amp;t=<%= title %>" class="socialite facebook-like" data-href="<%= url %>" data-send="false" data-layout="button_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Facebook</span></a>
   </li>
   <li>
