@@ -11,13 +11,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    ayah_passed = @ayah.score_result(params[:session_secret].gsub(".", ""), request.remote_ip)
+    ayah_passed = @ayah.score_result(params[:session_secret], request.remote_ip)
 
     if @event.valid? and ayah_passed
       @event.save
       flash[:success] = "Event submitted! It will show up on the site once it's approved. Thanks!"
       redirect_to events_path
     else
+      flash[:error] = "It seems that you are not human. Hmm..." unless ayah_passed
       render :new
     end
   end
