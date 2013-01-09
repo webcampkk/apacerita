@@ -22,3 +22,7 @@
 /config/deploy/staging.rb
 /config/unicorn/unicorn_template.rb.erb
 /lib/recipes/*
+
+#Ignore rbenv files
+.rbenv-version
+.ruby-version
