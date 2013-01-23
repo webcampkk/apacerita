@@ -36,8 +36,8 @@ ActiveAdmin.register Event do
       f.input :venue, :hint => "A short description for location of event.", :input_html => { maxlength: 35 }
       f.input :start_date, :hint => "Only start date is required", :order => [:day, :month, :year]
       f.input :end_date, :order => [:day, :month, :year]
-      f.input :start_time, :as => :time
-      f.input :end_time, :as => :time
+      f.input :start_time, :as => :string, :hint => "10:00 or 23:00"
+      f.input :end_time, :as => :string, :hint => "10:00 or 23:00"
       f.input :description
     end
 
