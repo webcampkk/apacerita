@@ -53,7 +53,7 @@ end
 
 # Deploy with Capistrano
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '2.13.5'
   gem 'capistrano-ext'
   gem 'capistrano_colors'
 end

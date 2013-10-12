@@ -69,7 +69,7 @@ GEM
     bourbon (2.1.0)
       sass (>= 3.1)
     builder (3.0.3)
-    capistrano (2.13.4)
+    capistrano (2.13.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -102,7 +102,7 @@ GEM
     gabba (1.0.1)
     gmaps4rails (1.5.5)
     has_scope (0.5.1)
-    highline (1.6.15)
+    highline (1.6.19)
     hike (1.2.1)
     i18n (0.6.1)
     inherited_resources (1.3.1)
@@ -135,13 +135,13 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     mysql2 (0.3.11)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.5.2)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     orm_adapter (0.0.7)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -221,7 +221,7 @@ DEPENDENCIES
   activeadmin
   ayah_integration
   bootstrap-kaminari-views
-  capistrano
+  capistrano (= 2.13.5)
   capistrano-ext
   capistrano_colors
   coffee-rails (~> 3.2.1)
